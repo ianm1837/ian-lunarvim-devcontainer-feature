@@ -1,0 +1,31 @@
+name: Publish DevContainer Feature
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish DevContainer Feature
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and Publish Feature
+        uses: devcontainers/action@v1
+        with:
+          publish-features: true
+          base-path: ./src
+          namespace: ghcr.io/${{ github.repository_owner }}
+          registry: ghcr.io

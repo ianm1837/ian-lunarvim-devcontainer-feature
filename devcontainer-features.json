@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json",
+  "name": "Ian's LunarVim IDE Setup",
+  "description": "Installs Neovim, LunarVim, LazyVim, LazyDocker, and all required dependencies.",
+  "features": {
+    "lunarvim": {
+      "id": "lunarvim",
+      "version": "1.0.0",
+      "documentationURL": "https://github.com/ianm1837/ian-lunarvim-devcontainer-feature",
+      "options": {
+        "config_repo": {
+          "type": "string",
+          "default": "https://github.com/YOUR_USERNAME/YOUR_LVIM_CONFIG.git",
+          "description": "Git repository containing the user's LunarVim configuration."
+        },
+        "node_version": {
+          "type": "string",
+          "default": "18",
+          "description": "Specify the Node.js version to install (e.g., 16, 18, 20)."
+        }
+      }
+    }
+  }
+}
