@@ -1,0 +1,14 @@
+{
+  "id": "ians-lunarvim",
+  "version": "1.0.0",
+  "name": "Ians LunarVim",
+  "description": "Installs Neovim, LunarVim, and Ian's configuration.",
+  "options": {
+    "config_repo": {
+      "type": "string",
+      "default": "https://github.com/ianm1837/ian-lvim-config.git",
+      "description": "Git repository containing Ian's LunarVim configuration."
+    }
+  },
+  "installsAfter": ["ghcr.io/devcontainers/features/common-utils"]
+}
